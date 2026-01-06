@@ -20,10 +20,30 @@ Design & Implement a Parking Lot Management System that supports vehicle parking
 
 ---
 
+## Entities:
+
+- ParkingSPot
+- ParkingLevel
+- ParkingTicket
+- VehicleSize
+- Vehicle
+- Bike
+- Car
+- Truck
+- FeeStrategy
+- TimeBasedFeeStrategy
+- FlatRateFeeStrategy
+- ParkingStrategy
+- NearestParkingStrategy
+- ParkingLot
+- ParkingLotDemo
+
+----
+
 ## Design Notes
 
 ### Design Patterns:
-- **Singelton** ParkingLot.
+- **Singleton** ParkingLot
 - **Strategy** FeeStrategy & Parking Strategy.
 - **Factory Pattern (extension)** create Vehicle based on input.
 - **Observer (extension)** notify of available spots
