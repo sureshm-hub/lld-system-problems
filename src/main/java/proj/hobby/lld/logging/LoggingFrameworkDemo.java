@@ -32,7 +32,12 @@ public class LoggingFrameworkDemo {
         custom.debug("Custom Debug Message");
         custom.warn("Custom Warn message");
 
-        // Shutdown LogManager
-        logManager.shutdown();
+        try {
+            Thread.sleep(1000);
+            // Shutdown LogManager
+            logManager.shutdown();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

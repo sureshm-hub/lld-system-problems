@@ -49,6 +49,7 @@ public class LogManager {
     }
 
     public void process(LogMessage logMessage, List<Appender> appenders) {
+        asyncProcessor.process(logMessage, appenders);
     }
 
     public void shutdown() {
