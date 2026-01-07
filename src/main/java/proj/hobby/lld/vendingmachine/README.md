@@ -38,7 +38,7 @@ Design & Implement a Vending Machine for users to buy, pay Products. The system 
 - **singelton** VendingMachine
 - **state** VendingMachineState
 
-## Do's 
+### Do's 
 
 - Inventory loosely couples Item/Product to VendingMachine
 - VendingMachine selectItem() & VendingMachine setSelectedItem()
