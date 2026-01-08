@@ -1,4 +1,4 @@
-package proj.hobby.lld.logging.strategy;
+package proj.hobby.lld.logging.strategy.formatter;
 
 import proj.hobby.lld.logging.entities.LogMessage;
 

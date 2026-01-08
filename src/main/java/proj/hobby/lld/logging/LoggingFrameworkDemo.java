@@ -1,7 +1,7 @@
 package proj.hobby.lld.logging;
 
 import proj.hobby.lld.logging.enums.LogLevel;
-import proj.hobby.lld.logging.strategy.ConsoleAppender;
+import proj.hobby.lld.logging.strategy.appender.ConsoleAppender;
 
 public class LoggingFrameworkDemo {
 

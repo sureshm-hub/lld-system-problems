@@ -49,5 +49,6 @@ Support multiple output destinations (file, console etc.), allow for custom form
 - LogLevel.isGraterOrEqual()
 - LogManager.loggers - ConcurrentHashMap
 - LogManager.getLogger(), createLogger()
-- AsyncProcessor.process
+- LogManager.shutdown() && AsyncProessor.stop()
+- AsyncProcessor.process()
 - LogFormatter & Appender

@@ -1,7 +1,7 @@
 package proj.hobby.lld.logging;
 
 import proj.hobby.lld.logging.entities.LogMessage;
-import proj.hobby.lld.logging.strategy.Appender;
+import proj.hobby.lld.logging.strategy.appender.Appender;
 
 import java.util.HashMap;
 import java.util.List;
@@ -53,6 +53,6 @@ public class LogManager {
     }
 
     public void shutdown() {
-
+        asyncProcessor.stop();
     }
 }
