@@ -37,8 +37,8 @@ Users can vote & search. System to assign reputation and score to users based on
 
 ### Design Patterns
 
-- Observer 
-- Strategy
+- Observer: PostObserver
+- Strategy: SearchStrategy
 
 ### Do's
 - type hierarchy: Content -> Post -> Question, Answer
