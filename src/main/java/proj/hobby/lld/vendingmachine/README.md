@@ -43,6 +43,7 @@ Design & Implement a Vending Machine for users to buy, pay Products. The system 
 - Inventory loosely couples Item/Product to VendingMachine
 - VendingMachine selectItem() & VendingMachine setSelectedItem()
 - State Transition: AcceptingState -> ItemSelectedState -> PaidState -> AcceptingState
+-  reset
 
 
 
