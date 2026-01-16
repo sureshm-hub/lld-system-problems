@@ -49,3 +49,12 @@ Design & Implement a coffee vending machine. User should be able to select coffe
 - Inventory 
 
 ### Don'ts
+
+---
+
+## Follow-Ups:
+
+- If the machine supports multiple concurrent users, how will the design be?
+  * is the state machine still global or per session/order?
+  * Observability: log transitions
+  * Payment/Dispense: async/failure prone
