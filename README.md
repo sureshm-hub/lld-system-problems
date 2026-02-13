@@ -4,8 +4,10 @@
 
 ## What each category really means
 
-- **Creational:** Patterns that focus on how objects are created and how that creation logic is encapsulated or controlled.
-- **Structural:** Patterns that focus on how classes/objects are composed or wrapped to form larger structures (adapters, wrappers, composites, facades).
+- **Creational:** Patterns that focus on how objects are created and how that creation logic is encapsulated or 
+  controlled.
+- **Structural:** Patterns that focus on how classes/objects are composed or wrapped to form larger structures 
+  (adapters, wrappers, composites, facades).
 - **Behavioral:** Patterns that focus on how objects communicate, share responsibilities, and vary algorithms at runtime.
 
 ---
@@ -64,6 +66,8 @@ Ask: "Where do algorithms vary, and how do objects notify or coordinate with eac
 # How to speak this in an interview
 
 You can structure your thinking out loud like this:
-- "First I’ll handle creation concerns using a Factory for vehicles and a Singleton for the configuration (creational patterns)."
+- "First I’ll handle creation concerns using a Factory for vehicles and a Singleton for the configuration 
+  (creational patterns)."
 - "Then I’ll introduce a Facade as a controller to hide internal subsystems from the client (structural pattern)."
-- "Finally, for runtime behavior, I’ll use Strategy to plug in different pricing algorithms and Observer for notifications (behavioral patterns)."
+- "Finally, for runtime behavior, I’ll use Strategy to plug in different pricing algorithms and Observer for 
+  notifications (behavioral patterns)."
