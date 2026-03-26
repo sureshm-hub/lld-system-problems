@@ -4,8 +4,8 @@
 
 ## Problem Statement
 
-Design & Implement a Linked in like networking service that allows users to create profile, manage connections, 
-receive notifications in feed.
+Design & Implement a Linked in like networking service that allows users to 
+create profile, manage connections, receive notifications in feed.
 
 ---
 
