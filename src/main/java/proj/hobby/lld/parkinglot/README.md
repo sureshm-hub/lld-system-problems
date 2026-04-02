@@ -3,40 +3,117 @@
 ---
 
 ## Problem Statement
-Design & Implement a Parking Lot Management System that supports vehicle parking, unparking, ticketing, fee calculation & management of multiple floors & spot types.  
+Design & Implement a Parking Lot Management System that supports vehicle 
+parking, unparking, ticketing, fee calculation & management of multiple 
+floors & spot types.  
 
 ---
 
 ## Requirements:
-
-- Multiple Floors
-- Parking Spots
-- Vehicles 
-- Ticketing
-- Parking/Unparking
-- Fee Calculation
-- Spot Allocation
-- Extensibility
+  - Multiple Floors
+  - Parking Spots
+  - Vehicles 
+  - Ticketing
+  - Parking/Unparking
+  - Fee Calculation - Business Logic
+  - Spot Allocation - Application Logic
+  - Extensibility
 
 ---
 
-## Entities:
+```mermaid
+classDiagram
+direction TB
 
-- ParkingSPot
-- ParkingLevel
-- ParkingTicket
-- VehicleSize
-- Vehicle
-- Bike
-- Car
-- Truck
-- FeeStrategy
-- TimeBasedFeeStrategy
-- FlatRateFeeStrategy
-- ParkingStrategy
-- NearestParkingStrategy
-- ParkingLot
-- ParkingLotDemo
+class ParkingLevel {
+    findParkingSpot()
+}
+
+class ParkingSpot {
+    - spotId
+    - vehicleSize
+    - isOccupied
+    - parkedVehicle
+    
+}
+
+class ParkingTicket {
+    - entryTime
+    - exitTime
+    - ticketId
+    - spotId
+    
+}
+
+class VehicleSize {
+    <<enumeration>>
+    SMALL
+    MEDIUM
+    LARGE
+}
+
+class Vehicle {
+    <<abstract>>
+    - licenseNumber
+    - vehicleSize
+}
+
+Vehicle <|-- Bike
+Vehicle <|-- Car
+Vehicle --> VehicleSize
+
+class ParkingStrategy {
+    <<interface>>
+}
+
+class NearestParkingStrategy {
+    
+}
+
+ParkingStrategy <|-- NearestParkingStrategy
+
+class FeeStrategy {
+    <<interface>>
+}
+
+class TimeBasedStrategy {
+    
+}
+
+FeeStrategy <|-- TimeBasedStrategy
+
+class ParkingLot {
+    - instance
+    + getInstance()
+    + setFeeStrategy()
+    + setParkingStrategy()
+    + addParkingLevel()
+    + parkVehicle() : ParkingTicket
+    + releaseVehicle() : Double
+}
+
+ParkingLot --> FeeStrategy
+ParkingLot --> ParkingStrategy
+
+```
+---
+
+## Entities:
+  - ParkingSPot
+  - ParkingLevel
+  - ParkingTicket
+  - VehicleSize
+  - Vehicle
+  - Bike
+  - Car
+  - Truck
+  - FeeStrategy
+  - TimeBasedFeeStrategy
+  - FlatRateFeeStrategy
+  - ParkingStrategy
+  - NearestParkingStrategy
+  - ParkingLot
+  - ParkingLotDemo
 
 ----
 
@@ -58,6 +135,6 @@ Design & Implement a Parking Lot Management System that supports vehicle parking
     Optional<ParkingSpot> ParkingLevel.findAvailableSpots(VehicleSize)
 
 ### Don'ts:
-- Vehicle: is abstract and not part of Entities, put in it's own package
-- id: ParkingTicketId/SpotID avoid long/int and leverage UUID
-- VehicleType: Not Required
+  - Vehicle: is abstract and not part of Entities, put in it's own package
+  - id: ParkingTicketId/SpotID avoid long/int and leverage UUID
+  - VehicleType: Not Required

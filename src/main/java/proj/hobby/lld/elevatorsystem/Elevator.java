@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.TreeSet;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class Elevator implements  Runnable{
+public class Elevator implements  Runnable {
     private int id;
     private int currentFloor;
     private ElevatorState currentState;
