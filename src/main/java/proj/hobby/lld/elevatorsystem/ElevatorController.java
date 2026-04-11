@@ -6,9 +6,8 @@ import proj.hobby.lld.elevatorsystem.enums.RequestSource;
 import proj.hobby.lld.elevatorsystem.observer.ElevatorDisplay;
 import proj.hobby.lld.elevatorsystem.observer.ElevatorObserver;
 import proj.hobby.lld.elevatorsystem.strategy.ElevatorSchedulingStrategy;
-import proj.hobby.lld.elevatorsystem.strategy.NearestElevatorScheduler;
+import proj.hobby.lld.elevatorsystem.strategy.DirectionAwareElevatorScheduler;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -17,15 +16,15 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
-public class ElevatorSystem {
+public class ElevatorController {
 
-    private static ElevatorSystem instance;
+    private static ElevatorController instance;
     private Map<Integer, Elevator> elevators;
     private ElevatorSchedulingStrategy schedulingStrategy;
     private ExecutorService executorService;
 
-    private ElevatorSystem(int numElevators) {
-        this.schedulingStrategy = new NearestElevatorScheduler();
+    private ElevatorController(int numElevators) {
+        this.schedulingStrategy = new DirectionAwareElevatorScheduler();
         this.executorService = Executors.newFixedThreadPool(numElevators);
 
         List<Elevator> elevatorList = new ArrayList<>();
@@ -40,9 +39,9 @@ public class ElevatorSystem {
         this.elevators = elevatorList.stream().collect(Collectors.toMap(Elevator::getId, e -> e));
     }
 
-    public static synchronized ElevatorSystem getInstance(int numElevators) {
+    public static synchronized ElevatorController getInstance(int numElevators) {
         if(instance == null) {
-            instance = new ElevatorSystem(numElevators);
+            instance = new ElevatorController(numElevators);
         }
         return instance;
     }

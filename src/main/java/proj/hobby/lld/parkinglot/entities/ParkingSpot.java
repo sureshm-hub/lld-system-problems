@@ -1,6 +1,5 @@
 package proj.hobby.lld.parkinglot.entities;
 
-import proj.hobby.lld.parkinglot.enums.VehicleType;
 import proj.hobby.lld.parkinglot.vehicle.Vehicle;
 import proj.hobby.lld.parkinglot.vehicle.VehicleSize;
 

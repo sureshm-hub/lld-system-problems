@@ -16,7 +16,7 @@ floors & spot types.
   - Ticketing
   - Parking/Unparking
   - Fee Calculation - Business Logic
-  - Spot Allocation - Application Logic
+  - Spot Allocation - Business Logic
   - Extensibility
 
 ---

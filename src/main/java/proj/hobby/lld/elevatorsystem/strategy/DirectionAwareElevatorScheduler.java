@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public class NearestElevatorScheduler implements ElevatorSchedulingStrategy {
+public class DirectionAwareElevatorScheduler implements ElevatorSchedulingStrategy {
 
     @Override
     public Optional<Elevator> schedule(List<Elevator> elevators, Request userRequest) {
